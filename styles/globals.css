@@ -1,26 +1,103 @@
-html,
-body {
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply select-none font-roboto;
+  }
+  button {
+    @apply hover:bg-opacity-90 active:bg-opacity-100 disabled:bg-gray-200;
+    @apply disabled:hover:cursor-not-allowed disabled:active:bg-gray-300 disabled:text-gray-500 transition-all duration-500;
+    @apply dark:hover:bg-opacity-80 dark:active:bg-opacity-100;
+  }
+  h1 {
+    @apply text-gray-500 dark:text-slate-500;
+  }
+  input {
+    @apply transition-all duration-700 disabled:bg-gray-200 disabled:hover:cursor-not-allowed;
+    @apply dark:disabled:bg-gray-200 dark:disabled:hover:cursor-not-allowed;
+    @apply block;
+  }
+  h1,
+  p,
+  label {
+    @apply font-roboto;
+  }
+
+  /* center */
+  .gridCenter {
+    @apply 
+    grid
+    place-content-center
+    h-full
+    w-full;
+  }
+  .flexCenter {
+    @apply flex justify-center items-center;
+  }
+
+  /* headles UI */
+  .dialogPanel {
+    @apply bg-slate-100 dark:bg-slate-50 bg-opacity-50 dark:bg-opacity-50;
+  }
+  .containerPanel {
+    @apply bg-white dark:bg-slate-900 rounded-md p-3 shadow-md;
+  }
+
+  /* style bg */
+  .bg-whiteSlate900 {
+    @apply bg-white dark:bg-slate-900;
+  }
+  .bg-whiteSlate800 {
+    @apply bg-white dark:bg-slate-800;
+  }
+  .bg-whiteSlate700 {
+    @apply bg-white dark:bg-slate-700;
+  }
+
+  /* style text */
+  .text-graySlate900 {
+    @apply text-gray-500 dark:text-slate-900;
+  }
+  .text-graySlate800 {
+    @apply text-gray-500 dark:text-slate-800;
+  }
+  .text-graySlate700 {
+    @apply text-gray-500 dark:text-slate-800;
+  }
+
+  /* fill or stroke component */
+  .fill-grayDark500 {
+    @apply fill-gray-500 dark:fill-slate-500;
+  }
+
+  /* buttonStyle */
+  .button-closeMenu {
+    @apply p-1 rounded-full hover:bg-gray-100 hover:rotate-90 dark:hover:bg-slate-800 transition-all duration-500;
+  }
+  .button-triggerMenu {
+    @apply p-0.5 active:bg-gray-900 dark:active:bg-slate-800 md:active:bg-white  dark:md:active:bg-slate-900 rounded-full md:p-0;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
-* {
-  box-sizing: border-box;
+.disable-scrollbars::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.disable-scrollbars {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
