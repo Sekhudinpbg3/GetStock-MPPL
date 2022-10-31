@@ -5,99 +5,121 @@
 
 @layer base {
   * {
-    @apply select-none font-roboto;
-  }
-  button {
-    @apply hover:bg-opacity-90 active:bg-opacity-100 disabled:bg-gray-200;
-    @apply disabled:hover:cursor-not-allowed disabled:active:bg-gray-300 disabled:text-gray-500 transition-all duration-500;
-    @apply dark:hover:bg-opacity-80 dark:active:bg-opacity-100;
+    @apply font-roboto text-gray-500 dark:text-slate-500;
   }
   h1 {
-    @apply text-gray-500 dark:text-slate-500;
+    @apply font-semibold;
   }
-  input {
-    @apply transition-all duration-700 disabled:bg-gray-200 disabled:hover:cursor-not-allowed;
-    @apply dark:disabled:bg-gray-200 dark:disabled:hover:cursor-not-allowed;
-    @apply block;
-  }
-  h1,
-  p,
-  label {
-    @apply font-roboto;
-  }
-
-  /* center */
-  .gridCenter {
-    @apply 
-    grid
-    place-content-center
-    h-full
-    w-full;
-  }
-  .flexCenter {
-    @apply flex justify-center items-center;
-  }
-
-  /* headles UI */
-  .dialogPanel {
-    @apply bg-slate-100 dark:bg-slate-50 bg-opacity-50 dark:bg-opacity-50;
-  }
-  .containerPanel {
-    @apply bg-white dark:bg-slate-900 rounded-md p-3 shadow-md;
-  }
-
-  /* style bg */
-  .bg-whiteSlate900 {
+  div {
     @apply bg-white dark:bg-slate-900;
   }
-  .bg-whiteSlate800 {
-    @apply bg-white dark:bg-slate-800;
+  input,
+  input[type] {
+    @apply focus:outline-none focus:ring-0 w-full transition-colors duration-700;
+    @apply focus:placeholder-transparent placeholder:font-light placeholder:italic;
   }
-  .bg-whiteSlate700 {
-    @apply bg-white dark:bg-slate-700;
+}
+
+@layer components {
+  .toggle {
+    @apply relative inline-flex items-center h-[10px] w-[25px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out;
+    @apply focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75 bg-green-400;
   }
 
-  /* style text */
-  .text-graySlate900 {
-    @apply text-gray-500 dark:text-slate-900;
+  /* button */
+  .btn {
+    @apply hover:opacity-80 active:opacity-100;
   }
-  .text-graySlate800 {
-    @apply text-gray-500 dark:text-slate-800;
+  .btn,
+  .btn-opacity {
+    @apply disabled:text-gray-500 dark:disabled:text-slate-500 disabled:bg-gray-100 dark:disabled:bg-slate-100;
+    @apply disabled:cursor-not-allowed disabled:active:bg-gray-200 dark:disabled:active:bg-slate-300;
   }
-  .text-graySlate700 {
-    @apply text-gray-500 dark:text-slate-800;
+  .btn,
+  .btn-opacity {
+    @apply transition-all duration-300;
+  }
+  /* icon */
+  .icon {
+    @apply h-5 w-5;
+  }
+  /* input */
+  .input {
+    @apply dark:bg-slate-800;
+  }
+  /* loader */
+  .loader-loading{
+    @apply absolute z-10 inset-0 cursor-not-allowed flex-center-xy bg-gray-500 dark:bg-slate-900 bg-opacity-30 dark:bg-opacity-30;
+  }
+}
+
+@layer utilities {
+  /* toggle */
+  .toggle-on {
+    @apply pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full border-2 shadow-lg ring-0 transition duration-200 ease-in-out translate-x-3;
+  }
+  .toggle-off {
+    @apply pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full border-2 shadow-lg ring-0 transition duration-200 ease-in-out -translate-x-2;
   }
 
-  /* fill or stroke component */
-  .fill-grayDark500 {
+  /* button */
+  .btn-primary {
+    @apply bg-blue-600 dark:bg-blue-700 text-gray-100 dark:text-slate-100;
+  }
+  .btn-secondary {
+    @apply border-gray-400 dark:border-slate-400 text-gray-500 dark:text-slate-400 border-2;
+    @apply hover:bg-gray-100 dark:hover:bg-slate-800;
+  }
+  .btn-danger {
+    @apply bg-pink-600 dark:bg-pink-700 text-gray-100 dark:text-slate-100;
+  }
+  .btn-success {
+    @apply bg-green-600 dark:bg-green-700 text-gray-100 dark:text-slate-100;
+  }
+  .opacity-primary {
+    @apply bg-blue-200 hover:bg-blue-300 text-blue-600 hover:text-blue-700;
+  }
+  .opacity-success {
+    @apply bg-green-200 hover:bg-green-300 text-green-600 hover:text-green-700;
+  }
+  .opacity-danger {
+    @apply bg-pink-200 hover:bg-pink-300 text-pink-600 hover:text-pink-700;
+  }
+  .btn-input-show {
+    @apply bg-transparent dark:bg-transparent;
+  }
+
+  /* icon */
+  .icon-fill {
     @apply fill-gray-500 dark:fill-slate-500;
   }
-
-  /* buttonStyle */
-  .button-closeMenu {
-    @apply p-1 rounded-full hover:bg-gray-100 hover:rotate-90 dark:hover:bg-slate-800 transition-all duration-500;
+  .icon-stroke {
+    @apply stroke-gray-500 dark:stroke-slate-500;
   }
-  .button-triggerMenu {
-    @apply p-0.5 active:bg-gray-900 dark:active:bg-slate-800 md:active:bg-white  dark:md:active:bg-slate-900 rounded-full md:p-0;
+
+  /* position*/
+  .flex-center-xy {
+    @apply flex justify-center items-center;
   }
-}
+  .flex-center-x {
+    @apply flex justify-center;
+  }
+  .flex-center-y {
+    @apply flex items-center;
+  }
+  .grid-center-xy {
+    @apply grid place-content-center;
+  }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-.disable-scrollbars::-webkit-scrollbar {
-  background: transparent; /* Chrome/Safari/Webkit */
-  width: 0px;
-}
-
-.disable-scrollbars {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  /* input */
+  .input-password {
+    @apply bg-transparent dark:bg-transparent border-none;
+  }
+  .input-border {
+    @apply border-2 focus:border-blue-300 dark:focus:border-blue-700 border-gray-300 dark:border-slate-700;
+    @apply invalid:border-pink-300 dark:invalid:border-pink-700;
+  }
+  .input-noborder {
+    @apply border-none invalid:bg-pink-200 invalid:text-pink-700 dark:invalid:bg-pink-500 dark:invalid:text-pink-200;
+  }
 }

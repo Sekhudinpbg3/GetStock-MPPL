@@ -3,7 +3,7 @@ const Login = () => {
   return (
     <>
       <Meta.Subtitle subtitle="Masuk" />
-      <div></div>
+      <div>Login</div>
     </>
   );
 };

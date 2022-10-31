@@ -1,8 +1,6 @@
 import Head from "next/head";
-import { string } from "prop-types";
 
-const Subtitle = (props) => {
-  const { title, subtitle } = props;
+const Subtitle = ({ title, subtitle }) => {
   return (
     <Head>
       <title>{`${title} | ${subtitle}`}</title>
@@ -34,16 +32,6 @@ const Subtitle = (props) => {
       <meta name="theme-color" content="#ffffff" />
     </Head>
   );
-};
-
-Subtitle.propTypes = {
-  title: string,
-  subtitle: string,
-};
-
-Subtitle.defaultProps = {
-  title: process.env.NEXT_PUBLIC_APP_NAME,
-  subtitle: "Home |",
 };
 
 export default Subtitle;

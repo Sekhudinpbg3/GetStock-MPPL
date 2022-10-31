@@ -2,7 +2,6 @@ import axios from "axios";
 import { ThemeProvider } from "next-themes";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import { Provider } from "react-redux";
-import { AlertTemplate } from "../components";
 import { store } from "../providers/reducer/store";
 import "../styles/globals.css";
 
@@ -18,11 +17,11 @@ axios.defaults.withCredentials = true;
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider enableSystem={false} attribute="class">
-      <AlertProvider template={AlertTemplate} {...options}>
+      {/* <AlertProvider template={} {...options}> */}
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>
-      </AlertProvider>
+      {/* </AlertProvider> */}
     </ThemeProvider>
   );
 }

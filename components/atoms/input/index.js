@@ -1,9 +1,7 @@
-import Normal from "./normal";
-import WithIcon from "./withIcon";
+import Border from "./border";
+import Noborder from "./noBorder";
 
-const Input = {
-  Normal,
-  WithIcon
+export const Input = {
+  Border,
+  Noborder
 };
-
-export default Input;

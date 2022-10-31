@@ -1,13 +1,15 @@
-import Text from "./text";
-import Normal from "./normal";
-import Icon from "./icon";
-import WithIcon from "./withIcon";
+import Custom from "./custom";
+import Danger from "./danger";
+import Opacity from "./opacity";
+import Primary from "./primary";
+import Secondary from "./secondary";
+import Success from "./success";
 
-const Button = {
-  Text,
-  Normal,
-  Icon,
-  WithIcon, 
+export const Button = {
+  Custom,
+  Danger,
+  Opacity,
+  Primary,
+  Secondary,
+  Success
 };
-
-export default Button;
