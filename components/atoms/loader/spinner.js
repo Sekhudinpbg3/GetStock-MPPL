@@ -1,15 +1,9 @@
-import { ClipLoader } from "react-Spinners";
-
 const Spinner = ({ loading }) => {
   return (
     <div className={loading ? "loader-loading" : "hidden"}>
-      <ClipLoader
-        className="grid-center-xy"
-        loading={loading}
-        color="#6B7280"
-        size={20}
-        speedMultiplier={0.8}
-      />
+      <div className="h-10 w-10 bg-green-200 dark:bg-green-300 rounded-full grid-center-xy">
+      <p className="font-semibold text-green-700 dark:text-green-800 animate-pulse">Loading</p>
+      </div>
     </div>
   );
 };
