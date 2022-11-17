@@ -1,7 +1,9 @@
 import Border from "./border";
 import Noborder from "./noBorder";
 
-export const Input = {
+const Input = {
   Border,
-  Noborder
+  Noborder,
 };
+
+export default Input;

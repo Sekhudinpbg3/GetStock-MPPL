@@ -1,5 +1,7 @@
 import Spinner from "./spinner";
 
-export const Loader = {
-    Spinner
+const Loader = {
+  Spinner,
 };
+
+export default Loader;

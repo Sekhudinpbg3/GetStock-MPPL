@@ -5,7 +5,7 @@ import Primary from "./primary";
 import Secondary from "./secondary";
 import Success from "./success";
 
-export const Button = {
+const Button = {
   Custom,
   Danger,
   Opacity,
@@ -13,3 +13,5 @@ export const Button = {
   Secondary,
   Success
 };
+
+export default Button

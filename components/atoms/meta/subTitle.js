@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-const Subtitle = ({ title, subtitle }) => {
+const Subtitle = ({ title = process.env.NEXT_PUBLIC_APP_NAME, subtitle = "Welcome" }) => {
   return (
     <Head>
-      <title>{`${title} | ${subtitle}`}</title>
+      <title>{`${title || 'AppName'} | ${subtitle}`}</title>
       <link
         rel="apple-touch-icon"
         type="image/png"

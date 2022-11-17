@@ -11,24 +11,44 @@
     @apply font-semibold;
   }
   div {
-    @apply bg-white dark:bg-slate-900;
+    @apply bg-transparent dark:bg-transparent select-none;
   }
   input,
   input[type] {
     @apply focus:outline-none focus:ring-0 w-full transition-colors duration-700;
     @apply focus:placeholder-transparent placeholder:font-light placeholder:italic;
   }
+  button:focus {
+    @apply outline-none;
+  }
+  button:active {
+    @apply outline-none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 @layer components {
+  .div-theme {
+    @apply bg-white dark:bg-slate-900;
+  }
   .toggle {
     @apply relative inline-flex items-center h-[10px] w-[25px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out;
-    @apply focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75 bg-green-400;
+    @apply focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75;
   }
 
   /* button */
   .btn {
-    @apply hover:opacity-80 active:opacity-100;
+    @apply hover:opacity-90 active:opacity-100 cursor-pointer;
   }
   .btn,
   .btn-opacity {
@@ -37,7 +57,7 @@
   }
   .btn,
   .btn-opacity {
-    @apply transition-all duration-300;
+    @apply transition-colors duration-300;
   }
   /* icon */
   .icon {
@@ -48,8 +68,8 @@
     @apply dark:bg-slate-800;
   }
   /* loader */
-  .loader-loading{
-    @apply absolute z-10 inset-0 cursor-not-allowed flex-center-xy bg-gray-500 dark:bg-slate-900 bg-opacity-30 dark:bg-opacity-30;
+  .loader-loading {
+    @apply absolute z-20 inset-0 cursor-not-allowed flex-center-xy bg-gray-500 dark:bg-slate-900 bg-opacity-30 dark:bg-opacity-30;
   }
 }
 
@@ -121,5 +141,15 @@
   }
   .input-noborder {
     @apply border-none invalid:bg-pink-200 invalid:text-pink-700 dark:invalid:bg-pink-500 dark:invalid:text-pink-200;
+  }
+
+  /* dinamis */
+  .w-dinamis {
+    @apply w-96 sm:w-[450px] md:w-[600px] lg:w-[800px] 2xl:w-[1100px];
+  }
+
+  /* disable-outline */
+  .disable-outline {
+    @apply active:outline-none;
   }
 }

@@ -1,19 +1,20 @@
-import { configureStore } from "@reduxjs/toolkit";
-import Components from "./components";
-import User from "./user";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import Global from "./global";
 
 const reducers = {
-  user: User.reducer,
-  components: Components.reducer,
+  global: Global.reducer,
 };
 
 const actions = {
-  userAction: User.actions,
-  componentAction: Components.actions,
+  global: Global.actions,
 };
 
 const store = configureStore({
   reducer: reducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export { actions, store };

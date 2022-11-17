@@ -1,4 +1,4 @@
-import { HideIcon, UnHideIcon } from "@/assets";
+import { HideIcon, UnHideIcon } from "../../../assets";
 import { useState } from "react";
 
 const Border = ({ inputClass, inputPassword, ...props }) => {
