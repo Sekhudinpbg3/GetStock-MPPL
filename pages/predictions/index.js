@@ -8,6 +8,7 @@ import { actions } from "../../providers/reducer/store";
 import { generateRequestQuery, parseStockData } from "../../utils";
 
 const Predictions = ({ props }) => {
+  console.log(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks/indices`);
   const { selectedIndex, selectedSector, selectedCode } = useSelector(
     (state) => state.global.prediction
   );
