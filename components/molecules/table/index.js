@@ -112,11 +112,11 @@ const Tabel = ({ data, type, withModal, onClick }) => {
                             {dt[dt1]}
                           </Button.Opacity>
                             <div className="m-4 w-56">
-                              <h1 className="text-sm text-green-600">
+                              <h1 className="text-sm lg:text-base text-green-600">
                                 Saham {dt[dt1]}
                               </h1>
-                              <p className="text-sm">({dt["Nama"]})</p>
-                              <Gap heigh="h-4" />
+                              <p className="text-sm lg:text-base">({dt["Nama"]})</p>
+                              <Gap heigh="h-5" />
                               <div className="grid grid-cols-3">
                                 <h1 className="col-span-1 text-sm font-normal md:font-semibold lg:text-base self-center">
                                   Open
@@ -174,11 +174,12 @@ const Tabel = ({ data, type, withModal, onClick }) => {
                                   }}
                                 />
                               </div>
-                              <Gap heigh="h-4" />
+                              <Gap heigh="h-5" />
                               <div className="w-full bg-slate-300 dark:bg-slate-800 py-2 rounded-md">
                                 <h1 className="text-green-600 text-sm">
                                   Hasil prediksi
                                 </h1>
+                                <p className="text-sm italic font-light">(Harga penutupan hari ini)</p>
                                 <div className="h-24 grid-center-xy">
                                   <p className="font-bold text-2xl">
                                     {stock.result
